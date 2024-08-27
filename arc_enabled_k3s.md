@@ -25,7 +25,8 @@ I will use Azure ARC to extend the reach of Azure into my own datacenter, allowi
 ### Target design 
 
 This setup will use actual hardware, deployed onprem. I will be using my existing "datacenter cluster" (3 HPe mini desktop PC's and a Synology NAS, to serve as a storage appliance). 
-All devices are connected to a local LAN, the local lan offers communication between the physical "servers", the iSCSI storage pool as served by the NAS and allows outbound communication towards the Internet and public Azure services I will be using.
+All devices are connected to a local LAN, the local lan offers communication between the physical servers, the iSCSI storage pool as served by the NAS and allows outbound communication towards the Internet and selected public Azure services that I will be using.
+Important as ever, is DNS. I will be depending on a lot of (inter, intra) cluster communication, and don't want to be typing IP addresses nor keeping track in hostfiles ;-). In my case I already run a Pihole DNS instance that I will use for local DNS resolution.
 
 As a hypervisor I chose to run Proxmox VE, it is available for free and offers a very rich featureset, including HA, FT, Hardware Pass-through, etc. 
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
@@ -36,10 +37,10 @@ In my case, I chose to deploy K3s as Kubernetes deployment. K3s offers a light-w
 I followed the basic step-by-step [to deploy k3s.](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#create-a-cluster) 
 
 Followed by adding a 2nd and 3rd node to the cluster using :  `curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -`
-
 The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-token on your server node.
 
-
+I continue to run into a glitch with 22.04 LTS whenever i use the `az extension` to the local Bash whenever IPv6 is enabled. running any `az` command litterly takes ages. I chose to disable it on the 3 Ubuntu nodes for now, and the issue is resolved. Surely some DNS issue on my side, but a topic for another day. 
+change the /etc/default/grup from `GRUB_CMDLINE_LINUX_DEFAULT="" ` to `GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1" `
 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
