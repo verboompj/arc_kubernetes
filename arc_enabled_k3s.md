@@ -18,12 +18,17 @@ Based on this deployment I will deploy (data)services to this "edge"  using Azur
 As a quick intro, what is Azure ARC ? 
 
 Azure ARC is Azure's answer to enable customers to manage and deploy services in hybrid and/or multicloud environments. Azure ARC extends the Azure controlplane into any Virtual machine, selected Hypervisors and even other Cloud providers. 
-I will use Azure ARC to extend the reach of Azure into my own datacenter, allowing me to operate and deploy workloads that I'm familiar with in the Azure Cloud, on my own hardware.
+
+I will use Azure ARC to extend the reach of Azure into my own datacenter, allowing me to operate and deploy workloads that I'm familiar with in the Azure Cloud, onto my own hardware.
 
 
-### Entra Internet Access - 
-Microsoft Entra Internet Access secures access to Microsoft 365, SaaS, and public internet apps while protecting users, devices, and data against internet threats.
-It provides an identity-centric Secure Web Gateway (SWG) solution for Software as a Service (SaaS) applications and other Internet traffic. 
+### Target design- 
+
+This setup will use actual hardware, deployed onprem. I will be using 3 HPe mini desktop PC's and a Synology NAS to serve as a storage appliance. 
+All devices are connected to a local LAN, the local lan offers communication between the physical "servers", the iSCSI storage pool as served by the NAS and allows outbound communication towards the Internet and public Azure services I will be using.
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
+
 
 #### Key features ( amongst others) 
 - Prevent stolen tokens from being replayed with the compliant network check in Conditional Access.
