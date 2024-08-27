@@ -2,7 +2,7 @@
 Azure ARC and (any) Kubernetes deployment templates / architectures
 
 
-![]((https://github.com/verboompj/arc_kubernetes/blob/main/pictures/azure-arc-control-plane.png))
+((https://github.com/verboompj/arc_kubernetes/blob/main/pictures/azure-arc-control-plane.png))
 
 ## This repo holds Azure ARC and Kubernetes configs and designs
 
