@@ -22,13 +22,25 @@ Azure ARC is Azure's answer to enable customers to manage and deploy services in
 I will use Azure ARC to extend the reach of Azure into my own datacenter, allowing me to operate and deploy workloads that I'm familiar with in the Azure Cloud, onto my own hardware.
 
 
-### Target design- 
+### Target design 
 
 This setup will use actual hardware, deployed onprem. I will be using 3 HPe mini desktop PC's and a Synology NAS to serve as a storage appliance. 
 All devices are connected to a local LAN, the local lan offers communication between the physical "servers", the iSCSI storage pool as served by the NAS and allows outbound communication towards the Internet and public Azure services I will be using.
 
 As a hypervisor I chose to run Proxmox VE, it is available for free and offers a very rich featureset, including HA, FT, Hardware Pass-through, etc. 
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
+
+On top of proxmox, as virtual machines, I use Ubuntu Server LTS 22.04 Its been around and is widely supported. For this deployment I need 3 instances. These instances will be deployed with the Kubernetes runtime.
+
+In my case, I chose to deploy K3s as Kubernetes deployment. K3s offers a light-weight kubernetes solution ideal for Edge scenario's. K3s is a certified Kubernetes solution by [Rancher](https://www.rancher.com/products/k3s) and is also free to use. 
+I followed the basic step-by-step [to deploy k3s:](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#create-a-cluster) 
+
+followed by adding a seciond and 3rd node to the cluster using : 
+
+'curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -'
+The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-token on your server node.
+
+
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
 
