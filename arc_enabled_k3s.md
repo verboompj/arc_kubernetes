@@ -17,11 +17,8 @@ Based on this deployment I will deploy (data)services to this "edge"  using Azur
 ## Intro into ARC
 As a quick intro, what is Azure ARC ? 
 
-Azure ARC is Azure's answer to enable customers to manage and deploy services in hybrid and/or multicloud environments.
-
-Azure ARC extends the Azure controlplane into any Virtual machine, selected Hypervisors and even other Cloud providers. 
-
-
+Azure ARC is Azure's answer to enable customers to manage and deploy services in hybrid and/or multicloud environments. Azure ARC extends the Azure controlplane into any Virtual machine, selected Hypervisors and even other Cloud providers. 
+I will use Azure ARC to extend the reach of Azure into my own datacenter, allowing me to operate and deploy workloads that I'm familiar with in the Azure Cloud, on my own hardware.
 
 
 ### Entra Internet Access - 
