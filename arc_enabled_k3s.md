@@ -1,4 +1,4 @@
-<img width="979" alt="image" src="https://github.com/user-attachments/assets/96c34f41-8e37-4750-aff2-4eb9f5cf22d8"># Intro into ARC enabled Kubernetes
+# Intro into ARC enabled Kubernetes
 
 In this write-up I will dive into setting up an onprem kubernetes environment to serve as an Edge deployment. 
 
