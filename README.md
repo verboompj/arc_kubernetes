@@ -7,6 +7,7 @@ Azure ARC and (any) Kubernetes
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/azure-arc-control-plane.png)
 
+## Topics 
 
 [Arc Enabled (any) Kubernetes Intro](https://github.com/verboompj/arc_kubernetes/blob/main/arc_enabled_k3s.md))
 
