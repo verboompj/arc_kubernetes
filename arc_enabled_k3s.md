@@ -27,6 +27,9 @@ I will use Azure ARC to extend the reach of Azure into my own datacenter, allowi
 This setup will use actual hardware, deployed onprem. I will be using 3 HPe mini desktop PC's and a Synology NAS to serve as a storage appliance. 
 All devices are connected to a local LAN, the local lan offers communication between the physical "servers", the iSCSI storage pool as served by the NAS and allows outbound communication towards the Internet and public Azure services I will be using.
 
+As a hypervisor I chose to run Proxmox VE, it is available for free and offers a very rich featureset, including HA, FT, Hardware Pass-through, etc. 
+I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
+
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
 
 
