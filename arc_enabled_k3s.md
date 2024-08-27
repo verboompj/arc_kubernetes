@@ -28,6 +28,10 @@ This setup will use actual hardware, deployed onprem. I will be using my existin
 All devices are connected to a local LAN, the local lan offers communication between the physical servers, the iSCSI storage pool as served by the NAS and allows outbound communication towards the Internet and selected public Azure services that I will be using.
 Important as ever, is DNS. I will be depending on a lot of (inter, intra) cluster communication, and don't want to be typing IP addresses nor keeping track in hostfiles ;-). In my case I already run a Pihole DNS instance that I will use for local DNS resolution.
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
+
+### Hardware Setup
+
 As a hypervisor I chose to run Proxmox VE, it is available for free and offers a very rich featureset, including HA, FT, Hardware Pass-through, etc. 
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
 
@@ -36,13 +40,20 @@ In proxmox, I created 3 servers, I chose to run an UEFI BIOS (mark-out pre-enrol
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/proxmox_host.png)
 
+### Kubernetes
+
 For Kubernetes I chose to deploy K3s. K3s offers a light-weight kubernetes solution ideal for Edge scenario's. K3s is a certified Kubernetes solution by [Rancher](https://www.rancher.com/products/k3s) and is also free to use. 
 I followed the basic step-by-step [to deploy k3s.](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#create-a-cluster) 
 
 Followed by adding a 2nd and 3rd node to the cluster using :  `curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -`
 The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-token on your server node. Replace the `myserver:6443` with the actual server name (thanks DNS) 
 
+Validate all nodes are up and running: `kubectl get nodes`
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubectl.png)
 
+Success ! 
+
+### Azure ARC
 
 Next up, ARC enabling the thing. Again following a [step-by-step](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#arc-enable-your-cluster)
 
@@ -51,11 +62,10 @@ I chose to disable it on the 3 Ubuntu nodes for now, and the issue is resolved. 
 
 Do this by changing the line from `GRUB_CMDLINE_LINUX_DEFAULT="" ` to `GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1" ` in the /etc/default/grub file , followed by a `sudo update-grub`
 
-After completion you should see something similar to this: 
+after installing de Azure CLI onto my master (initial) K3s node, i ran the steps documented and verified succes by issuing : 
 
+[](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubectl_arc.png)
 
-
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
 
 
 #### Key features ( amongst others) 
