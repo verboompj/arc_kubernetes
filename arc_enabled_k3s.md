@@ -1,4 +1,4 @@
-# Intro into ARC enabled Kubernetes
+<img width="979" alt="image" src="https://github.com/user-attachments/assets/96c34f41-8e37-4750-aff2-4eb9f5cf22d8"># Intro into ARC enabled Kubernetes
 
 In this write-up I will dive into setting up an onprem kubernetes environment to serve as an Edge deployment. 
 
@@ -77,12 +77,30 @@ In the azure portal, search for ARC and find your new cluster as one of the conn
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/arcportal.png)
 
 Clicking on it one level deeper shows the details of the cluster. From top to bottom we can see the Overview, the Kubernetes resources, Settings, Monitoring and Automations.
+Monitoring allows you to deploy familiar Azure Monitor solutions such as Container Insights, but also managed Prometheus and Grafana. 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/arccluster.png)
 
-Monitoring allows you to deploy familiar Azure Monitor solutions such as Container Insights, but also managed Prometheus and Grafana. 
-
 I am zooming in on the Kubernetes Resources just a little bit next, to show how it maps the kubernetes logic into a portal experience.
 
+First setup a bearer token to authenticate into the cluster using the steps [provided here](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/cluster-connect?tabs=azure-cli%2Cagent-version#service-account-token-authentication-option) 
+Its ran from the az cli enabled (1st) node of your K3s cluster. 
+
+Copy the token output 
+
+Now, back to the Azure portal, click on Kubernetes Resources (preview) and select Namespaces. You will be presented with a screen that asks you to paste in the token you just created.
+
+After an auto-refresh you will see the actual namespaces active on the cluster. I am mostly interested in the 2nd menu item, Workloads. Click Workloads and under the 1st tab, Deployments, click on the drop-down marked "Filter by namespace".
+Select "azure-arc" and see that the list of Deployments actually matches what we've also seen when issuing the `kubectl get deployments,pods -n azure-arc` command earlier. 
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/arcworkloads.png)
+
+Swithcing over to the Pods tab we can see the pods that make up the Deployments in a little more detail. Click on any of them to find more details, such as pod IP and the node its currently running on.
+
+[](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/poddetails.png)
+
+Adding any new namespace / service is done using the same YAML files as one would submit using kubectl. 
+And I'll leave it at that for now. As you can see , ARC enabling allows for a portal experience that enables you to do the same and more things with your cluster whilst being side-by-side with existing tools such as kubectl.
+Next time I'll explore some extensions such as IOT Operations and Arc enabled Dataservices.
 
 
