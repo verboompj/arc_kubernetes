@@ -33,11 +33,9 @@ I don't actually need most of these features for this deployment, buit it does s
 On top of proxmox, as virtual machines, I use Ubuntu Server LTS 22.04 Its been around and is widely supported. For this deployment I need 3 instances. These instances will be deployed with the Kubernetes runtime.
 
 In my case, I chose to deploy K3s as Kubernetes deployment. K3s offers a light-weight kubernetes solution ideal for Edge scenario's. K3s is a certified Kubernetes solution by [Rancher](https://www.rancher.com/products/k3s) and is also free to use. 
-I followed the basic step-by-step [to deploy k3s:](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#create-a-cluster) 
+I followed the basic step-by-step [to deploy k3s.](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#create-a-cluster) 
 
-followed by adding a 2nd and 3rd node to the cluster using : 
-
-`curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -`
+Followed by adding a 2nd and 3rd node to the cluster using :  `curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -`
 
 The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-token on your server node.
 
