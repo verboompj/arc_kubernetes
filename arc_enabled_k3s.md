@@ -2,7 +2,7 @@
 
 In this write-up I will dive into setting up an onprem kubernetes environment to serve as an Edge deployment. 
 
-Based on this deployment I will deploy (data)services to this " edge"  using Azure ARC. I will deploy services such as Azure PostgreSql, Azure IOT Operations and a WebApp. 
+Based on this deployment I will deploy (data)services to this "edge"  using Azure ARC. I will deploy services such as Azure PostgreSql, Azure IOT Operations and a WebApp, for example. 
 
 
 [Intro into ARC](https://github.com/verboompj/EntraGSA/blob/main/README.md#intro-into-arc)
