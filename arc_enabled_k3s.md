@@ -95,7 +95,7 @@ Select "azure-arc" and see that the list of Deployments actually matches what we
 
 Swithcing over to the Pods tab we can see the pods that make up the Deployments in a little more detail. Click on any of them to find more details, such as pod IP and the node its currently running on.
 
-[](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/poddetails.png)
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/poddetails.png)
 
 Adding any new namespace / service is done using the same YAML files as one would submit using kubectl. 
 And I'll leave it at that for now. As you can see , ARC enabling allows for a portal experience that enables you to do the same and more things with your cluster whilst being side-by-side with existing tools such as kubectl.
