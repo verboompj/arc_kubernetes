@@ -4,8 +4,13 @@ In this write-up I will dive into setting up an onprem kubernetes environment to
 
 Based on this deployment I will deploy (data)services to this "edge"  using Azure ARC. I will deploy services such as Azure PostgreSql, Azure IOT Operations and a WebApp, for example. 
 
+[Intro into Azure ARC](https://github.com/verboompj/arc_kubernetes/blob/main/arc_enabled_k3s.md#intro-into-arc)
 
+[Target design](https://github.com/verboompj/arc_kubernetes/blob/main/arc_enabled_k3s.md#target-design)
 
+[K3s Kubernetes](https://github.com/verboompj/arc_kubernetes/blob/main/arc_enabled_k3s.md#kubernetes)
+
+[ARC Enabling](https://github.com/verboompj/arc_kubernetes/blob/main/arc_enabled_k3s.md#azurearc)
 
 ## Intro into ARC
 As a quick intro, what is Azure ARC ? 
