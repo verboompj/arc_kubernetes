@@ -7,9 +7,9 @@ Based on this deployment I will deploy (data)services to this "edge"  using Azur
 
 [Intro into ARC](https://github.com/verboompj/EntraGSA/blob/main/README.md#intro-into-arc)
 
-[Setup Entra Private Access](https://github.com/verboompj/EntraGSA/blob/main/README.md#setup-entra-private-access)
+[Intro into K3s Kubernetes](https://github.com/verboompj/EntraGSA/blob/main/README.md#kubernetes)
 
-- [1. Connector Service](https://github.com/verboompj/EntraGSA/blob/main/README.md#2-connector-service)
+[ARC Enabling](https://github.com/verboompj/EntraGSA/blob/main/README.md#azurearc)
 
 
 
@@ -41,7 +41,7 @@ In proxmox, I created 3 servers, I chose to run an UEFI BIOS (mark-out pre-enrol
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/proxmox_host.png)
 
-### Kubernetes
+## Kubernetes
 
 For Kubernetes I chose to deploy K3s. K3s offers a light-weight kubernetes solution ideal for Edge scenario's. K3s is a certified Kubernetes solution by [Rancher](https://www.rancher.com/products/k3s) and is also free to use. 
 I followed the basic step-by-step [to deploy k3s.](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#create-a-cluster) 
@@ -54,7 +54,7 @@ Validate all nodes are up and running: `kubectl get nodes`
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubectl.png)
 Great Success ! 
 
-### Azure ARC
+## AzureARC
 
 Next up, ARC enabling the thing. Again following a [step-by-step](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#arc-enable-your-cluster)
 
