@@ -32,16 +32,22 @@ As a hypervisor I chose to run Proxmox VE, it is available for free and offers a
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
 
 On top of proxmox, as virtual machines, I use Ubuntu Server LTS 22.04 Its been around and is widely supported. For this deployment I need 3 instances. These instances will be deployed with the Kubernetes runtime.
+In proxmox, I created 3 servers, I chose to run an UEFI BIOS (mark-out pre-enroll keys in the wizard), 2 cores, 12 Gb ram, 60Gib disk. 
 
-In my case, I chose to deploy K3s as Kubernetes deployment. K3s offers a light-weight kubernetes solution ideal for Edge scenario's. K3s is a certified Kubernetes solution by [Rancher](https://www.rancher.com/products/k3s) and is also free to use. 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/proxmox_host.png)
+
+For Kubernetes I chose to deploy K3s. K3s offers a light-weight kubernetes solution ideal for Edge scenario's. K3s is a certified Kubernetes solution by [Rancher](https://www.rancher.com/products/k3s) and is also free to use. 
 I followed the basic step-by-step [to deploy k3s.](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#create-a-cluster) 
 
 Followed by adding a 2nd and 3rd node to the cluster using :  `curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -`
-The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-token on your server node.
+The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-token on your server node. Replace the `myserver:6443` with the actual server name (thanks DNS) 
 
-I continue to run into a glitch with 22.04 LTS whenever i use the `az extension` to the local Bash whenever IPv6 is enabled. running any `az` command litterly takes ages. I chose to disable it on the 3 Ubuntu nodes for now, and the issue is resolved. Surely some DNS issue on my side, but a topic for another day. 
+I de continue to run into a glitch with 22.04 LTS whenever i use/add the `az extension` to the local Bash when IPv6 is enabled. Running any `az` command litterly takes ages. I chose to disable it on the 3 Ubuntu nodes for now, and the issue is resolved. Surely some DNS issue on my side, but a topic for another day. 
 
 Do this by changing the line from `GRUB_CMDLINE_LINUX_DEFAULT="" ` to `GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1" ` in the /etc/default/grub file , followed by a `sudo update-grub`
+
+After completion you should see something similar to this: 
+
 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
