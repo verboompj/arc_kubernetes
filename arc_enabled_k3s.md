@@ -40,7 +40,8 @@ Followed by adding a 2nd and 3rd node to the cluster using :  `curl -sfL https:/
 The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-token on your server node.
 
 I continue to run into a glitch with 22.04 LTS whenever i use the `az extension` to the local Bash whenever IPv6 is enabled. running any `az` command litterly takes ages. I chose to disable it on the 3 Ubuntu nodes for now, and the issue is resolved. Surely some DNS issue on my side, but a topic for another day. 
-change the /etc/default/grup from `GRUB_CMDLINE_LINUX_DEFAULT="" ` to `GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1" `
+
+Do this by changing the line from `GRUB_CMDLINE_LINUX_DEFAULT="" ` to `GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1" ` in the /etc/default/grub file , followed by a `sudo update-grub`
 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
