@@ -41,6 +41,7 @@ The value to use for K3S_TOKEN is stored at /var/lib/rancher/k3s/server/node-tok
 
 
 
+
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
 
 
