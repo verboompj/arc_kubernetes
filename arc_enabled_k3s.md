@@ -36,7 +36,7 @@ Important as ever, is DNS. I will be depending on a lot of (inter, intra) cluste
 As a hypervisor I chose to run Proxmox VE, it is available for free and offers a very rich featureset, including HA, FT, Hardware Pass-through, etc. 
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
 
-On top of proxmox, as virtual machines, I use Ubuntu Server LTS 22.04 Its been around and is widely supported. For this deployment I need 3 instances. These instances will be deployed with the Kubernetes runtime.
+On top of proxmox, as virtual machines, I use Ubuntu Server LTS 22.04. 22.04 has been around for a while now and is widely supported for all types of hardware and deployments. For this deployment I need 3 instances, and all 3 instances will be deployed with a Kubernetes runtime later on.
 In proxmox, I created 3 servers, I chose to run an UEFI BIOS (mark-out pre-enroll keys in the wizard), 2 cores, 12 Gb ram, 60Gib disk. 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/proxmox_host.png)
