@@ -72,43 +72,17 @@ Awesome. A number of deployments each consisting of one or more pods. The cluste
 1. I choose to mark my Master node (control-plane node) as cordoned. Doing so prevents any further scheduling of pods on the node itself, isolating it to do management tasks only. `kubectl cordon #hostname`
 2. To avoid having to issue a sudo before any kubectl issue:  `sudo chmod 644 /etc/rancher/k3s/k3s.yaml` 
 
+In the azure portal, search for ARC and find your new cluster as one of the connected Kubernetes Clusters:
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/arcportal.png)
+
+Clicking on it one level deeper shows the details of the cluster. From top to bottom we can see the Overview, the Kubernetes resources, Settings, Monitoring and Automations.
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/arccluster.png)
+
+Monitoring allows you to deploy familiar Azure Monitor solutions such as Container Insights, but also managed Prometheus and Grafana. 
+
+I am zooming in on the Kubernetes Resources just a little bit next, to show how it maps the kubernetes logic into a portal experience.
 
 
-#### Key features ( amongst others) 
-- Prevent stolen tokens from being replayed with the compliant network check in Conditional Access.
-- Apply universal tenant restrictions to prevent data exfiltration to other tenants or personal accounts including anonymous access.
-- Enriched logs with network and device signals currently supported for SharePoint Online traffic.
-- Protect user access to the public internet while leveraging Microsoft's cloud-delivered, identity-aware SWG solution.
-- Enable web content filtering to regulate access to websites based on their content categories and domain names.
-- Apply universal Conditional Access policies for all internet destinations, even if not federated with Microsoft Entra ID, through integration with Conditional 
-  Access session controls.
-
-i.e. an Identity (& Device) based upstream Secure Web Gateway as part of the Entra platform, leveraging CASB and Conditional Access components of that very suite, tunneling specified traffic over a SWG to its destination using a secured and conditioned path. 
-
-### Entra Private Access - 
-Microsoft Entra Private Access provides your users - whether in an office or working remotely - secured access to your private, corporate resources. Microsoft Entra Private Access builds on the capabilities of Microsoft Entra application proxy and extends access to any private resource, port, and protocol.
-
-#### Key features
-- Quick Access: Zero Trust based access to a range of IP addresses and/or FQDNs without requiring a legacy VPN.
-- Per-app access for TCP apps (UDP support in development).
-- Modernize legacy app authentication with deep Conditional Access integration.
-- Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing third-party SSE solutions.
-
-i.e. Azure AD ( Entra) App Proxy on Steroids. This is a service of particular interest to me personally, as I love to phase out any form of (Client)VPN service wherever I see them. This is that very VPN killer service that promises to accomplish just that. 
-It also leverages Entra's other services such as conditional access framework, MFA, RBAC, etc. Lets explore.
-
-###
-###
-
-## Setup Entra Private Access
-
-The Entra Private Access service consists of 3 main components:
-  
-1. A Connector - This is a (group of) server(s) that has a line of sight to the service one wants to expose - a web, rds, ssh, whatever service you want your client to be able to connect to. On these servers one installs the Connnector Service to reverse-connect into the Entra platform. 
-
-2. An Entra Application registration, representing the service you'd like to expose, the conditional access policy and the user asignment. This is the " traditional" Entra Enterprise Application as we know it + Network Access properties.
-
-3. A Client - Global Secure Access Client - installers available for Windows, Android, IOS and macOS - installed on the client device.
-
-![Screenshot](https://github.com/verboompj/EntraGSA/blob/main/Pictures/private-access-diagram-quick-access3.png)
 
