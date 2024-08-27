@@ -65,7 +65,6 @@ Do this by changing the line from `GRUB_CMDLINE_LINUX_DEFAULT="" ` to `GRUB_CMDL
 
 after installing de Azure CLI onto my master (initial) K3s node, i ran the steps [documented](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=ubuntu#arc-enable-your-cluster) and verified succes by issuing: `kubectl get deployments,pods -n azure-arc`
 
-
 [](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubectl_arc.png)
 
 Awesome. Many deployments each consisting of one or more pods. the cluster is now ARC enabled and ready to be managed using familiar Azure toolsets. Lets quickly glance over some of it. 
