@@ -26,6 +26,7 @@ I will use Azure ARC to extend the reach of Azure into my own datacenter, allowi
 
 This setup will use actual hardware, deployed onprem. I will be using my existing "datacenter cluster" (3 HPe mini desktop PC's and a Synology NAS, to serve as a iSCSI & NFS storage appliance). 
 All devices are connected to a local LAN, the local lan offers communication between the physical servers, the NAS and allows outbound communication towards the Internet and selected public Azure services that I will be using.
+
 Important as ever, is DNS. I will be depending on a lot of (inter, intra) cluster communication, and don't want to be typing IP addresses nor keeping track in hostfiles ;-). In my case I already run a Pihole DNS instance that I will use for local DNS resolution.
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/overview_hw.png)
