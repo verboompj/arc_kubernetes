@@ -22,7 +22,8 @@ Its in the same doc, under the "how-to guides": [Any kubernetes how-to using Azu
 
 I ran the Direct connected, Azure Portal deployment wizzard. There are other options like the CLI or using Azure Data Studio. 
 
-You can choose between direct and indirect see: https://learn.microsoft.com/en-us/azure/azure-arc/data/connectivity 
+You can choose between direct and indirect see: https://learn.microsoft.com/en-us/azure/azure-arc/data/connectivity.
+
 My data controller will be installed in direct connectivity mode to an existing Azure Arc-enabled Kubernetes cluster. This connectivity mode will allow you to create and manage Arc-enabled data services, such as SQL Managed Instance enabled by Azure Arc and PostgreSQL enabled by Azure Arc directly from the Azure portal.
 
 
