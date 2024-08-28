@@ -40,7 +40,8 @@ In proxmox, I created 3 servers, I chose to run an UEFI BIOS (mark-out pre-enrol
 I could do with less ram memory per node, just keep in mind the bare minimum for this deployment ( Kubernetes, Arc enabled and 1 extension such as Azure IOT Operations); it require 16Gb of memory for the entire cluster. 
 Given that i want to deploy over multiple cluster nodes and want to add some High Availability, I settled for 12 Gb per node now. In any case I can lose 1 node and not wory at all. 
 
--- Updated specs for the K3s hosts, I found that the Azure Data Controller was not deployed, as it had pods not ready for scheduling due to CPU limits. I updated the config in Proxmox to 4 cores per K3s host and rebooted them. --  
+
+__ -- Updated specs for the K3s hosts, I found that the Azure Data Controller was not deployed, as it had pods not ready for scheduling due to CPU limits. I updated the config in Proxmox to 4 cores per K3s host and rebooted them. --  __
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/proxmox_host.png)
 
