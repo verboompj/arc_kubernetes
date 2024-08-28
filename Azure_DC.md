@@ -26,3 +26,12 @@ I ran the Direct connected, Azure Portal deployment wizzard. There are other opt
 
 
 Disabled metrics, monitoring in the next step and deployed. 
+
+
+
+
+
+https://learn.microsoft.com/en-us/azure-data-studio/quickstart-postgres
+
+
+
