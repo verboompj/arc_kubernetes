@@ -5,7 +5,8 @@ Effectively I will have an ARC managed Kubertetes platform on an Edge location (
 
 #### First up, quick recap- 
 
-I have deployed a 3 node cluster, each node has 12 Gib ram, 4 cores and access to a network that provides outbound internet connectivity. On this cluster I have deployed K3s Kubernetes and connected the cluster to Azure using Azure ARC.
+Previously I have deployed a 3 node cluster, each node has 12 Gib ram, 4 cores and access to a network that provides outbound internet connectivity. 
+On this cluster I have deployed K3s Kubernetes and connected the cluster to Azure using Azure ARC.
 
 Topics in this wrtite-up: 
 
