@@ -3,18 +3,19 @@ In this write-up I will deploy an Azure managed PostgreSQL database service & da
 
 Effectively I will have an ARC managed Kubertetes platform on an Edge location (my home) where I will deploy Azure Services to. The same Azure services I am familiar with on the public Azure platform, running in my home on my network. Cant wait !
 
-First up, quick recap- 
+#### First up, quick recap- 
 
 I have deployed a 3 node cluster, each node has 12 Gib ram, 4 cores and access to a network that provides outbound internet connectivity. On this cluster I have deployed K3s Kubernetes and connected the cluster to Azure using Azure ARC.
 
+### 1. Deploy the Azure Data Controller
 
+In order to deploy Azure Data Services such as Azure SQL and Azure PostgreSQL, your ARC connected Kubernetes cluster needs to have a Data Controller running. Currently only one controller per cluster is supported. 
 
+_In Kubernetes terminology, the data controller is a Kubernetes controller object that extends Kubernetes APIs to manage lifecycle of the data services. It is the heart of Arc-enabled data services and uses the underlying Arc-enabled Kubernetes for all aspects of managing the lifecycle of the data services like provisioning/deprovisioning, monitoring/logging to communication with Azure to bring down commands, policy and sending inventory, usage, metrics and billing information to Azure._
 
+I'm not running any production workloads, but if you are, make sure you meet [all the resource prereqs](https://learn.microsoft.com/en-us/azure/azure-arc/data/sizing-guidance#minimum-deployment-requirements)
 
-
-
-Prereqs  https://learn.microsoft.com/en-us/azure/azure-arc/data/sizing-guidance#minimum-deployment-requirements
-
+Next, I moved over to [this great overview](https://learn.microsoft.com/en-us/azure/azure-arc/data/plan-azure-arc-data-services#deployment-steps) 
 
 Choose between direct and indirect see: https://learn.microsoft.com/en-us/azure/azure-arc/data/connectivity 
 I chose Direct 
