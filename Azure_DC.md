@@ -1,3 +1,15 @@
+As a follow-up from my previous post where I deployed a "edge" Kubernetes cluster onprem and connected it to Azure ARC, In this write-up I will deploy an Azure managed & supported PostgreSQL database service & database on my onprem cluster.
+
+Effectively I will have an ARC managed Kubertetes platform on an Edge location (my home) where I will deploy Azure Services to. The same Azure services I am familiar with on the public Azure platform, running in my home on my network. Cant wait !
+
+First up, quick recap- 
+
+I have deployed a 3 node cluster, each node has 12 Gib ram, 4 cores and access to a network that provides outbound internet connectivity. On this cluster I have deployed K3s Kubernetes and connected the cluster to Azure using Azure ARC.
+
+
+
+
+
 
 
 Prereqs  https://learn.microsoft.com/en-us/azure/azure-arc/data/sizing-guidance#minimum-deployment-requirements
