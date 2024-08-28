@@ -26,7 +26,7 @@ In order to deploy Azure Data Services such as Azure SQL and Azure PostgreSQL, y
 
 _In Kubernetes terminology, the data controller is a Kubernetes controller object that extends Kubernetes APIs to manage lifecycle of the data services. It is the heart of Arc-enabled data services and uses the underlying Arc-enabled Kubernetes for all aspects of managing the lifecycle of the data services like provisioning/deprovisioning, monitoring/logging to communication with Azure to bring down commands, policy and sending inventory, usage, metrics and billing information to Azure._
 
-I'm not running any production workloads, but if you are, make sure you meet [all the resource prereqs](https://learn.microsoft.com/en-us/azure/azure-arc/data/sizing-guidance#minimum-deployment-requirements)
+I'm not running any production workloads, but if you are, make sure you meet [all the resource prereqs.](https://learn.microsoft.com/en-us/azure/azure-arc/data/sizing-guidance#minimum-deployment-requirements)
 Next, I moved over to [this great overview](https://learn.microsoft.com/en-us/azure/azure-arc/data/plan-azure-arc-data-services#deployment-steps) to prepare for my deployment. 
 I won't use the quickstart from the Docs page, as it assumes an AKS deployment insterad of a "any" kubernetes approach. What we need is in the same doc, under the "how-to guides": [Any kubernetes how-to using Azure Portal](https://learn.microsoft.com/en-us/azure/azure-arc/data/create-data-controller-direct-azure-portal) 
 You can choose between direct and indirect see: https://learn.microsoft.com/en-us/azure/azure-arc/data/connectivity.
