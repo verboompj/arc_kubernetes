@@ -1,5 +1,5 @@
 
 
 
-kubectl get logstorageclass
+kubectl get storageclass
 
