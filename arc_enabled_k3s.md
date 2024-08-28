@@ -41,7 +41,7 @@ I could do with less ram memory per node, just keep in mind the bare minimum for
 Given that i want to deploy over multiple cluster nodes and want to add some High Availability, I settled for 12 Gb per node now. In any case I can lose 1 node and not wory at all. 
 
 
-__ -- Updated specs for the K3s hosts, I found that the Azure Data Controller was not deployed, as it had pods not ready for scheduling due to CPU limits. I updated the config in Proxmox to 4 cores per K3s host and rebooted them. --  __
+** -- Updated specs for the K3s hosts, I found that the Azure Data Controller was not deployed, as it had pods not ready for scheduling due to CPU limits. I updated the config in Proxmox to 4 cores per K3s host and rebooted them. -- **
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/proxmox_host.png)
 
