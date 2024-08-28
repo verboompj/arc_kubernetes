@@ -7,6 +7,8 @@ Effectively I will have an ARC managed Kubertetes platform on an Edge location (
 
 I have deployed a 3 node cluster, each node has 12 Gib ram, 4 cores and access to a network that provides outbound internet connectivity. On this cluster I have deployed K3s Kubernetes and connected the cluster to Azure using Azure ARC.
 
+Topics in this wrtite-up: 
+
 [Azure ARC Data Controller](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md#1-deploy-the-azure-data-controller) 
 
 
@@ -24,11 +26,33 @@ Next, I won't use the quickstart, as it assumes an AKS deployment insterad of a 
 Its in the same doc, under the "how-to guides": [Any kubernetes how-to using Azure Portal](https://learn.microsoft.com/en-us/azure/azure-arc/data/create-data-controller-direct-azure-portal)
 
 You can choose between direct and indirect see: https://learn.microsoft.com/en-us/azure/azure-arc/data/connectivity.
+
+So onto the portal: 
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/portaldata.png)
+
 My data controller will be installed in direct connectivity mode to an existing Azure Arc-enabled Kubernetes cluster. Hence, I ran the Direct connected, Azure Portal deployment wizzard. There are other options like the CLI or using Azure Data Studio. 
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/arcdc.png)
+
+Supply the details, and make sure to create a new Custom Location where you select you ARC enabled Kubernetes cluster.
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/detailscontroller.png)
+
+For the configuration Template, select `azure-arc-kubeadm`
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubeconfig.png)
+
+The Details for your cluster are next, in my case I had to retrieve the Storage Class my cluster procides, that can be done running `kubectl get storageclass` on my 1st K3s node
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/storageclassk3s.png)
+
+I choose Loadbalancer as Service Type, so the end result should look something like this:
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubedetailsarc.png)
 
 
-`kubectl get storageclass`
+
 
 
 
