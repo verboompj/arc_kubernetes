@@ -10,4 +10,5 @@ Azure ARC and (any) Kubernetes
 ## Topics 
 
 [Arc Enabled (any) Kubernetes Intro](https://github.com/verboompj/arc_kubernetes/blob/main/arc_enabled_k3s.md)
+
 [Arc Data Controller & Data Services](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md)
