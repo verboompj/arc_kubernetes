@@ -89,7 +89,7 @@ Awesome! another succesfull deployment. Or is it ? we can check by creating a ne
 
 I used Azure Data Explorer and addedd the Postgress plugin / add-on. Using this great quickstart, I was able to connect and do some SQL queries: https://learn.microsoft.com/en-us/azure-data-studio/quickstart-postgres
 
-The result is actually pretty cool, a local Azure Postgress instance on my local network, exposed on my local IP addresses. 
+The result is actually pretty cool, a local Azure Postgress instance on my local network, exposed on a local IP addresses / DNS name. 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/postgresquery.png)
 
