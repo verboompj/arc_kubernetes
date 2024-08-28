@@ -11,6 +11,13 @@ Topics in this wrtite-up:
 
 [Azure ARC Data Controller](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md#1-deploy-the-azure-data-controller) 
 
+[Verify the Data Controller deployment](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md#verify-deployment)
+
+[Deploy Azure PostgreSQL](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md#deploy-postgresql)
+
+[Validating the deployment](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md#validating-the-deployment)
+
+
 
 ### Deploy the Azure ARC Data Controller
 
