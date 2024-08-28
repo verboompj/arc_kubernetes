@@ -15,7 +15,7 @@ _In Kubernetes terminology, the data controller is a Kubernetes controller objec
 
 I'm not running any production workloads, but if you are, make sure you meet [all the resource prereqs](https://learn.microsoft.com/en-us/azure/azure-arc/data/sizing-guidance#minimum-deployment-requirements)
 
-Next, I moved over to [this great overview](https://learn.microsoft.com/en-us/azure/azure-arc/data/plan-azure-arc-data-services#deployment-steps) 
+Next, I moved over to [this great overview](https://learn.microsoft.com/en-us/azure/azure-arc/data/plan-azure-arc-data-services#deployment-steps) to prepare for my deployment. 
 
 Next, I won't use the quickstart, as it assumes an AKS deployment insterad of a "any" kubernetes approach. 
 Its in the same doc, under the "how-to guides": [Any kubernetes how-to using Azure Portal](https://learn.microsoft.com/en-us/azure/azure-arc/data/create-data-controller-direct-azure-portal)
