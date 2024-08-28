@@ -51,29 +51,42 @@ I choose Loadbalancer as Service Type, so the end result should look something l
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubedetailsarc.png)
 
+In the next step I disabled metrics & monitoring (you may choose otherwise) and deployed by clicking Create. 
 
+### Verify Deployment
 
+Awesome, now thats all setup, we can track its progress in the Azure portal. You will see a new namespace under the name you provided earlier when creating the data controller.
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/dataservicecomplete.png)
 
+And by browsing to the resource in the Azure portal, in the Resource Group you selected, you'll find your Data Controller Instance, ready, connected and all set to go to work.
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/dataconvalidate.png) 
 
-https://learn.microsoft.com/en-us/azure/azure-arc/data/install-client-tools
+### Deploy PostgreSQL 
 
-Don't use the quickstart, as it assumes an AKS deployment insterad of a "any" kubernetes approach. 
-Its in the same doc, under the "how-to guides": [Any kubernetes how-to using Azure Portal](https://learn.microsoft.com/en-us/azure/azure-arc/data/create-data-controller-direct-azure-portal)
-I ran the Direct connected, Azure Portal deployment wizzard. There are other options like the CLI or using Azure Data Studio. 
+As a last step I deploy a Postgres instance. Deployment is pretty straigt forward from the ARC pannel in the Azure portal, browse to PostgreSQL (preview) and click Create at the top left.
 
+Select your Dataservice name as the Custom Location , size your instance and select the prefered Service Type. I selected Load-Balancer again. Type in your standard credentials ;-) , no I mean the secure ones ! And hit Create.
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/deploypostgresportal.png)
 
+You will see it being deployed on your cluster shortly / immediately 
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/postgresdeploy.png)
 
-Disabled metrics, monitoring in the next step and deployed. 
+And as a resource in the Azure portal as well. Mind the IP address as the external endpoint. That looks a lot like my local LAN ! (or in this case vlan) 
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/postgedeployed.png)
 
+### Validating the deployment
 
+Awesome! another succesfull deployment. Or is it ? we can check by creating a new database on our local Azure Postres instance, and query it maybe ? 
 
+I used Azure Data Explorer and addedd the Postgress plugin / add-on. Using this great quickstart, I was able to connect and do some SQL queries: https://learn.microsoft.com/en-us/azure-data-studio/quickstart-postgres
 
-https://learn.microsoft.com/en-us/azure-data-studio/quickstart-postgres
+The result is actually pretty cool, a local Azure Postgress instance on my local network, exposed on my local IP addresses. 
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/postgresquery.png)
 
 
