@@ -47,7 +47,7 @@ For the configuration Template, select `azure-arc-kubeadm`
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/kubeconfig.png)
 
-The Details for your cluster are next, in my case I had to retrieve the Storage Class my cluster procides, that can be done running `kubectl get storageclass` on my 1st K3s node
+The Details for your cluster are next, in my case I had to retrieve the Storage Class my cluster provides, that can be done running `kubectl get storageclass` on my 1st K3s node
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/storageclassk3s.png)
 
