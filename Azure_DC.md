@@ -7,7 +7,10 @@ Effectively I will have an ARC managed Kubertetes platform on an Edge location (
 
 I have deployed a 3 node cluster, each node has 12 Gib ram, 4 cores and access to a network that provides outbound internet connectivity. On this cluster I have deployed K3s Kubernetes and connected the cluster to Azure using Azure ARC.
 
-### 1. Deploy the Azure Data Controller
+[Azure ARC Data Controller](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md#1-deploy-the-azure-data-controller) 
+
+
+### Deploy the Azure ARC Data Controller
 
 In order to deploy Azure Data Services such as Azure SQL and Azure PostgreSQL, your ARC connected Kubernetes cluster needs to have a Data Controller running. Currently only one controller per cluster is supported. 
 
