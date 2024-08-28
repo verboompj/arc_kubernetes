@@ -85,7 +85,7 @@ And as a resource in the Azure portal as well. Mind the IP address as the extern
 
 ### Validating the deployment
 
-Awesome! another succesfull deployment. Or is it ? we can check by creating a new database on our local Azure Postres instance, and query it maybe ? 
+Awesome! another succesfull deployment. Or is it ? we can check by creating a new database on our local Azure Postgres instance, and query it maybe ? 
 
 I used Azure Data Explorer and addedd the Postgress plugin / add-on. Using this great quickstart, I was able to connect and do some SQL queries: https://learn.microsoft.com/en-us/azure-data-studio/quickstart-postgres
 
