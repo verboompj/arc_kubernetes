@@ -14,6 +14,7 @@ kubectl get storageclass
 
 
 
+
 https://learn.microsoft.com/en-us/azure/azure-arc/data/install-client-tools
 
 Don't use the quickstart, as it assumes an AKS deployment insterad of a "any" kubernetes approach. 
@@ -21,3 +22,7 @@ Its in the same doc, under the "how-to guides": [Any kubernetes how-to using Azu
 I ran the Direct connected, Azure Portal deployment wizzard. There are other options like the CLI or using Azure Data Studio. 
 
 
+
+
+
+Disabled metrics, monitoring in the next step and deployed. 
