@@ -36,12 +36,14 @@ As a hypervisor I chose to run Proxmox VE, it is available for free and offers a
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
 
 On top of proxmox, as virtual machines, I use Ubuntu Server LTS 22.04. 22.04 has been around for a while now and is widely supported for all types of hardware and deployments. For this deployment I need 3 instances, and all 3 instances will be deployed with a Kubernetes runtime later on.
-In proxmox, I created 3 servers, I chose to run an UEFI BIOS (mark-out pre-enroll keys in the wizard), 4 cores, 12 Gb ram, 60Gib disk. 
+In proxmox, I created 3 servers, I chose to run an UEFI BIOS (mark-out pre-enroll keys in the wizard), ~~2~~ 4 cores, 12 Gb ram, 60Gib disk. 
 I could do with less ram memory per node, just keep in mind the bare minimum for this deployment ( Kubernetes, Arc enabled and 1 extension such as Azure IOT Operations); it require 16Gb of memory for the entire cluster. 
 Given that i want to deploy over multiple cluster nodes and want to add some High Availability, I settled for 12 Gb per node now. In any case I can lose 1 node and not wory at all. 
 
 
-#### -- Updated specs for the K3s hosts, I found that the Azure Data Controller was not deployed, as it had pods not ready for scheduling due to CPU limits. I updated the config in Proxmox to 4 cores per K3s host and rebooted them. -- ####
+**-- Updated specs for the K3s hosts, I found that the Azure Data Controller was not deployed, as it had pods not ready for scheduling due to CPU limits. I updated the config in Proxmox to 4 cores per K3s host and rebooted them. --**
+
+
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/proxmox_host.png)
 
