@@ -96,5 +96,6 @@ I used Azure Data Explorer and addedd the Postgress plugin / add-on. Using this 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/postgresquery.png)
 
 The result is actually pretty cool, a local Azure Postgress instance on my local network, exposed on a local IP addresses / DNS name. 
+Note the 3 private IP addresses exposed, these are the 3 IP addresses of the 3 K3s Kubernetes nodes. 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/arcpostgresloadb1.png)
