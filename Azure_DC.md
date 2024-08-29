@@ -89,7 +89,7 @@ So what are the 4 containers making up this single instance of Postgres ? well i
 
 ### Validating the deployment
 
-Awesome! another succesfull deployment. Or is it ? we can check by creating a new database on our local Azure Postgres instance, and query it maybe ? 
+Awesome! another succesfull deployment. Or is it ? We should check by creating a new database on our local Azure Postgres instance, and query it maybe ? 
 
 I used Azure Data Explorer and addedd the Postgress plugin / add-on. Using this great quickstart, I was able to connect and do some SQL queries: https://learn.microsoft.com/en-us/azure-data-studio/quickstart-postgres
 
