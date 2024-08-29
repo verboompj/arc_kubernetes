@@ -5,7 +5,7 @@ Effectively I will have an ARC managed Kubertetes platform on an Edge location (
 
 #### First up, quick recap- 
 
-Previously I have deployed a 3 virtual machines that are connected to a network that provides outbound internet connectivity. 
+Previously I have deployed 3 virtual machines that are connected to a network that provides outbound internet connectivity. 
 On these VM's I have deployed a K3s Kubernetes cluster and connected the cluster to Azure using Azure ARC.
 
 Topics in this wrtite-up: 
