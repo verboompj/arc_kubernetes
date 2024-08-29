@@ -83,6 +83,10 @@ And as a resource in the Azure portal as well. Mind the IP address as the extern
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/postgedeployed.png)
 
+So what are the 4 containers making up this single instance of Postgres ? well its Postgres, a Postgres ARC agent, telegraf (an agent for collecting and reporting metrics) and a fluentbit (logs and metrics forwarder) instance:
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/postgedetailcont.png)
+
 ### Validating the deployment
 
 Awesome! another succesfull deployment. Or is it ? we can check by creating a new database on our local Azure Postgres instance, and query it maybe ? 
