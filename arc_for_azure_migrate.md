@@ -92,23 +92,31 @@ Allright, lets get some Monitoring Logs and Metrics in for our 2 servers. By def
 
 There are 2 ways of doing this - the neat way and the quick and dirty way. 
 Quick and dirty: Simply click Monitor Insights , configure your Log Analytics Workspace created earlier and done. 
-
+<br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Res.png)
-
+<br><br>
 The Neat way is to create a Data Collection Rule "manually". The previous action does just that, but to understand whats actually happening, lets go ahead and create a rule from scratch.
 For thet we go to Azure Monitor in the Azure Portal. Use search bar at the top again and search for Monitor.
 
 When in Monitor, scroll down in the left column to Settings and click on Data Collection Rules.
+<br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon.png)
-
+<br><br>
 Click Next and in the Resources tab click `+ Add Resources` and dril down to the 2 VM's we ARC-enabled earlier. No need for configuring an endpoint here. 
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon2.png)
 
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon2.png)
+<br><br>
 In the Collect and Deliver tab we need to setup some routing logic - What data to end up where. 
 Click `+ Add Datasource` and in the dialog that opens, select Performance Counters  from the drop-down list and leave it at Basic.
 Next select a Destination - here you can remove the default rule and add a new Destination , select Azure Monitor Logs as destination Type , select your Subscription and the newly created Log Analytics Workspace. Click Save on the dialog. Finally click cick Next and Create 
-
+<br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon3.png)
+<br><br>
+
+If all went well, the AMA agent will be pushed to your ARC enabled VM's through this Data Collection Rule. Nice one ! 
+
+
 
 
 
