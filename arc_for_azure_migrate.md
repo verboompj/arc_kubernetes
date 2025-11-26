@@ -124,28 +124,23 @@ The rule also triggers the deploymant of the AMA Agent for all selected Resource
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon6.png)
 <br><br>
 
-
-
-
-
-
-
-
-
+Ok back to our VM - By now the AMA agent should be deployed. Lets check: 
 
 <br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon2.png)
-<br><br>
-In the Collect and Deliver tab we need to setup some routing logic - What data to end up where. 
-Click `+ Add Datasource` and in the dialog that opens, select Performance Counters  from the drop-down list and leave it at Basic.
-Next select a Destination - here you can remove the default rule and add a new Destination , select Azure Monitor Logs as destination Type , select your Subscription and the newly created Log Analytics Workspace. Click Save on the dialog. Finally click cick Next and Create 
-<br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon3.png)
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon7.png)
 <br><br>
 
-If all went well, the AMA agent will be pushed to your ARC enabled VM's through this Data Collection Rule. Nice one ! 
+Cool, we're almost there, we also want the Dependency Agent deployed. It is a extension of the AMA agent and enables deeper insights and dependencies through MAP or KQL visualizations.
+It is set for retirement in June of 2028 - thats OK for now. See : https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-dependency-agent#manually-install-or-upgrade-dependency-agent-on-windows 
 
+There are many ways to deploy this agent, in thios demo we deploy it just as we did the AMA agent itself, through a DCR ( the rule ;-) ) 
+However, i'd like to click through once more to deploy this rule for me . 
 
+On the Server in the ARC blade, click Insights once more. Here you'll see results comming in on Performance Metrics captured by our fiorst DCR rule. 
+Click on Map at the top 
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon11.png)
+<br><br>
 
 
 
