@@ -21,7 +21,7 @@ And in this case, my own "datacenter" can be seen as an Edge site where local co
 ### Target design 
 
 This setup will use actual hardware, deployed onprem. I will be using my existing "datacenter cluster" (Proxmox VE) 
-All devices are connected to a local LAN. The local lan offers communication between the physical servers, a NAS and allows outbound communication through a NAT-firewall towards the Internet and selected public Azure services that I will be using.
+All devices are connected to a local LAN. The local lan offers communication between the physical servers and allows outbound communication through a NAT-firewall towards the Internet and selected public Azure services that I will be using.
 
 2 demo Windows Server VM's will be used, both deployed with Windows Sevrer 2022 Datacenter Edition. 
 I will deploy the "ARC agent" first, then, using a Data Collection Rule deploy the "AMA agent" (Azure Monitor Agent) and lastly enable enrollment of the "Dependency Agent" , as part of the AMA agent.
