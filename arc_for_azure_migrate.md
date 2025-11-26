@@ -27,3 +27,5 @@ All devices are connected to a local LAN. The local lan offers communication bet
 I will deploy the "ARC agent" first, then, using a Data Collection Rule deploy the "AMA agent" (Azure Monitor Agent) and lastly enable enrollment of the "Dependency Agent" , as part of the AMA agent.
 
 Fort this demo I will deploy a new Log Analytics workspace just for the 2 VM's and we will explore some tables and run som KQL queries to extract the data we need in order to create a Azure Migrate Assessment and Business Case.
+
+To keep it lean and mean, i will be using Public Endpoints for all Azure Services, and Europe as my service and data boundry. 
