@@ -53,6 +53,6 @@ Create a new Resouce Group `ARC_Zwolle` in my case , and give your WS a name `AR
 
 ## Azure ARC
 
-Azure ARC next : 
+Azure ARC next: In the portal 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC.png)
