@@ -97,21 +97,31 @@ Quick and dirty: Simply click Monitor Insights , configure your Log Analytics Wo
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Res.png)
 <br><br>
 
-Lets try this method first, in the dialog click on `Customize Infrastructure Monitoring` , uncheck the preview and select our LAW we created before as target:
+Lets try this method first, in the dialog click on `Customize Infrastructure Monitoring` , uncheck the preview and select our LAW we created before as target. Click Save and Enable. 
+If all went well, the AMA agent will be pushed to your ARC enabled VM through a newly created Data Collection Rule. Nice one ! 
+
+Wile we wait for it to complete, lets see what we actually triggerd by this quick enablement. 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon4.png)
 
 
-
-
-The Neat way is to create a Data Collection Rule "manually". The previous action does just that, but to understand whats actually happening, lets go ahead and create a rule from scratch.
+Lets see that new Data Collection Rule.
 For thet we go to Azure Monitor in the Azure Portal. Use search bar at the top again and search for Monitor.
-
 When in Monitor, scroll down in the left column to Settings and click on Data Collection Rules.
+
 <br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon.png)
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon5.png)
 <br><br>
-Click Next and in the Resources tab click `+ Add Resources` and dril down to the 2 VM's we ARC-enabled earlier. No need for configuring an endpoint here. 
+
+
+
+
+
+
+
+
+
+
 
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon2.png)
