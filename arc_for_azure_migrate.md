@@ -155,3 +155,6 @@ Add a name and select the Dependency Agent ( Map feature)
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon10.png)
 <br><br>
 
+This may take some time and also some data has to flow in, so lets give it a some time. Time for a coffee. 
+
+
