@@ -1,4 +1,4 @@
-# Intro ARC inventory as base for Azure Migrate Businesscase and Assessment
+# Intro ARC inventory as base for a Azure Migrate Businesscase & Assessment
 
 In this write-up I will dive into setting up a Azure ARC Edge deployment. 
 
