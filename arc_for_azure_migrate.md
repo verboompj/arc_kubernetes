@@ -35,5 +35,5 @@ To keep it lean and mean, i will be using Public Endpoints for all Azure Service
 As a hypervisor I chose to run Proxmox VE, it is available for free and offers a very rich featureset, including HA, FT, Hardware Pass-through, etc. 
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
 
-On top of proxmox, as virtual machines, i deployed 2 simple Windows server instances : 'winserver01' & 'winserver02' 
+On top of proxmox, as virtual machines, i deployed 2 simple Windows server instances : `winserver01` & `winserver02` 
 
