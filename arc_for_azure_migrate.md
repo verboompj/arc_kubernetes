@@ -109,10 +109,20 @@ Lets see that new Data Collection Rule.
 For thet we go to Azure Monitor in the Azure Portal. Use search bar at the top again and search for Monitor.
 When in Monitor, scroll down in the left column to Settings and click on Data Collection Rules.
 
+
+Here you see our auto created rule. Click on it to explore it. 
+
+
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon5.png)
 <br><br>
 
+The rule consists of "routing logic" in this case for Performance Counters to Log Analytics , see `View Data Sources` 
+The rule also triggers the deploymant of the AMA Agent for all selected Resources. Click `Resources` to find the server selected.
+
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon6.png)
+<br><br>
 
 
 
