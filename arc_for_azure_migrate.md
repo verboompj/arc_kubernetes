@@ -41,7 +41,7 @@ On top of proxmox, as virtual machines, i deployed 2 simple Windows server insta
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/pve.png)
 
 
-######
+<br><br><br>
 
 ## Log Analytics Workspace
 
@@ -50,7 +50,7 @@ Create a new Resouce Group `ARC_Zwolle` in my case , and give your WS a name `AR
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/LAW.png)
 
-######
+
 
 
 ## Azure ARC
