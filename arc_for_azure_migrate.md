@@ -19,3 +19,6 @@ And in this case, my own "datacenter" can be seen as an Edge site where local co
 
 
 ### Target design 
+
+This setup will use actual hardware, deployed onprem. I will be using my existing "datacenter cluster" (Proxmox VE) 
+All devices are connected to a local LAN, the local lan offers communication between the physical servers, a NAS and allows outbound communication towards the Internet and selected public Azure services that I will be using.
