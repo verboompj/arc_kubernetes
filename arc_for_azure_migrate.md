@@ -22,3 +22,8 @@ And in this case, my own "datacenter" can be seen as an Edge site where local co
 
 This setup will use actual hardware, deployed onprem. I will be using my existing "datacenter cluster" (Proxmox VE) 
 All devices are connected to a local LAN, the local lan offers communication between the physical servers, a NAS and allows outbound communication towards the Internet and selected public Azure services that I will be using.
+
+2 demo Windows Server VM's will be used, both deployed with Windows Sevrer 2022 Datacenter Edition. 
+I will deploy the "ARC agent" first, then, using a Data Collection Rule deploy the "AMA agent" (Azure Monitor Agent) and lastly enable enrollment of the "Dependency Agent" , as part of the AMA agent.
+
+Fort this demo I will deploy a new Log Analytics workspace just for the 2 VM's and we will explore some tables and run som KQL queries to extract the data we need in order to create a Azure Migrate Assessment and Business Case.
