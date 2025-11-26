@@ -92,9 +92,18 @@ Allright, lets get some Monitoring Logs and Metrics in for our 2 servers. By def
 
 There are 2 ways of doing this - the neat way and the quick and dirty way. 
 Quick and dirty: Simply click Monitor Insights , configure your Log Analytics Workspace created earlier and done. 
+
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Res.png)
 <br><br>
+
+Lets try this method first, in the dialog click on `Customize Infrastructure Monitoring` , uncheck the preview and select our LAW we created before as target:
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon4.png)
+
+
+
+
 The Neat way is to create a Data Collection Rule "manually". The previous action does just that, but to understand whats actually happening, lets go ahead and create a rule from scratch.
 For thet we go to Azure Monitor in the Azure Portal. Use search bar at the top again and search for Monitor.
 
