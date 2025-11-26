@@ -86,6 +86,32 @@ After awhile, a popup or browser will launch, asking you to authenticate to your
 
 <br><br>
 
+## Azure VM Insights
+
+Allright, lets get some Monitoring Logs and Metrics in for our 2 servers. By default, ARC enables many services for free. The VM Insights we are after are metered services, billed by the amount of logs ingested. It won't be much for a demo environment , so lets go ahead to set it up.
+
+There are 2 ways of doing this - the neat way and the quick and dirty way. 
+Quick and dirty: Simply click Monitor Insights , configure your Log Analytics Workspace created earlier and done. 
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Res.png)
+
+The Neat way is to create a Data Collection Rule "manually". The previous action does just that, but to understand whats actually happening, lets go ahead and create a rule from scratch.
+For thet we go to Azure Monitor in the Azure Portal. Use search bar at the top again and search for Monitor.
+
+When in Monitor, scroll down in the left column to Settings and click on Data Collection Rules.
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon.png)
+
+Click Next and in the Resources tab click `+ Add Resources` and dril down to the 2 VM's we ARC-enabled earlier. No need for configuring an endpoint here. 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon2.png)
+
+In the Collect and Deliver tab we need to setup some routing logic - What data to end up where. 
+Click `+ Add Datasource` and in the dialog that opens, select Performance Counters  from the drop-down list and leave it at Basic.
+Next select a Destination - here you can remove the default rule and add a new Destination , select Azure Monitor Logs as destination Type , select your Subscription and the newly created Log Analytics Workspace. Click Save on the dialog. Finally click cick Next and Create 
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon3.png)
+
+
+
 
 
 
