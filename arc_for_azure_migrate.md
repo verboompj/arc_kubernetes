@@ -50,6 +50,7 @@ Create a new Resouce Group `ARC_Zwolle` in my case , and give your WS a name `AR
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/LAW.png)
 
+<br><br><br>
 
 
 
