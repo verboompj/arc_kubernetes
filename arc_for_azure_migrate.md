@@ -29,3 +29,11 @@ I will deploy the "ARC agent" first, then, using a Data Collection Rule deploy t
 Fort this demo I will deploy a new Log Analytics workspace just for the 2 VM's and we will explore some tables and run som KQL queries to extract the data we need in order to create a Azure Migrate Assessment and Business Case.
 
 To keep it lean and mean, i will be using Public Endpoints for all Azure Services, and Europe as my service and data boundry. 
+
+### Hardware Setup
+
+As a hypervisor I chose to run Proxmox VE, it is available for free and offers a very rich featureset, including HA, FT, Hardware Pass-through, etc. 
+I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
+
+On top of proxmox, as virtual machines, i deployed 2 simple Windows server instances : 'winserver01' & 'winserver02' 
+
