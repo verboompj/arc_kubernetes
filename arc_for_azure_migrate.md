@@ -46,13 +46,15 @@ On top of proxmox, as virtual machines, i deployed 2 simple Windows server insta
 ## Log Analytics Workspace
 
 A fresh LAW (Log  Analytics Workspace) is usefull if you really want to track all updates the AMA agent and Dependency Agent create as Tables in your workspace, so lets deploy one:
-Create a new Resouce Group `ARC_Zwolle` in my case , and give your WS a name `ARCws` for example. Next, Next, Create: 
+Create a new Resouce Group `ARC_Zwolle` in my case , and give your WS a name `ARCws` for example(make sure it is unique in your RG). Next, Next, Create: 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/LAW.png)
 
 
 ## Azure ARC
 
-Azure ARC next: In the portal 
+Azure ARC next: In the portal type ARC in the top field and click on Azure ARC: 
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC.png)
+
+
