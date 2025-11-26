@@ -38,5 +38,7 @@ I don't actually need most of these features for this deployment, buit it does s
 
 On top of proxmox, as virtual machines, i deployed 2 simple Windows server instances : `winserver01` & `winserver02` 
 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/pve.png)
+
 
 
