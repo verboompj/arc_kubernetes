@@ -60,4 +60,25 @@ Azure ARC next: In the portal type ARC in the top field and click on Azure ARC:
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC.png)
 
+We will create a onboarding script for the 2 OnPrem servers. 
+Click on Infrastructure, Machines in the left column and click the `+ Onboard/Create` to onboard new resources.
+Since we are only onboarding a few resources, a manual onboarding is OK for us. 
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_On.png)
+
+Fill in the required fields: Resource group (same as before), a Region ( West Europe for me), Operating System (in this case Winows), I left the SQL checkmark unchecked, a Public Endpoint for this Demo and finally the Authentication, here we select Manual as we are only onboarding 2 VM's.
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_On2.png)
+
+Next, tagging is of use to display richer context of this deployment, as an example ass a `Datacenter` : `nameofDC` tage and a `City` and or `Country` as example. This will be applied to the ARC resources next. 
+Next, click Download and Run script. The easiest way for me is to simply copy the script to my clipboard and execute the script in Powershell (ISE) on the target server(s) 
+
+After awhile, a popup or browser will launch, asking you to authenticate to your Azure subscription. Doing so enables the final registration of this resource into the Azure ARC enviromnent. If all went wll, the end result should look something like this:
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_On3.png)
+
+
+
+
+
 
