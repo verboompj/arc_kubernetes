@@ -124,7 +124,7 @@ The rule also triggers the deploymant of the AMA Agent for all selected Resource
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon6.png)
 <br><br>
 
-Ok back to our VM - By now the AMA agent should be deployed. Lets check: 
+Ok back to our VM on the ARC blade - By now the AMA agent should be deployed. Lets check the Extensions on the right column: 
 
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon7.png)
@@ -133,7 +133,7 @@ Ok back to our VM - By now the AMA agent should be deployed. Lets check:
 Cool, we're almost there, we also want the Dependency Agent deployed. It is a extension of the AMA agent and enables deeper insights and dependencies through MAP or KQL visualizations.
 It is set for retirement in June of 2028 - thats OK for now. See : https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-dependency-agent#manually-install-or-upgrade-dependency-agent-on-windows 
 
-There are many ways to deploy this agent, in thios demo we deploy it just as we did the AMA agent itself, through a DCR ( the rule ;-) ) 
+There are many ways to deploy this agent, in this demo we deploy it just as we did the AMA agent itself, through a DCR ( the rule ;-) ) 
 However, i'd like to click through once more to deploy this rule for me . 
 
 On the Server in the ARC blade, click Insights once more. Here you'll see results comming in on Performance Metrics captured by our fiorst DCR rule. 
@@ -142,8 +142,16 @@ Click on Map at the top
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon11.png)
 <br><br>
 
+Immidiately a popup appears on the right side where we can deploy the Dependency Agent , however we need to enable a second DCR for it and cannot combine it with our first. 
+For that click on Create New 
 
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon9.png)
+<br><br>
 
+Add a name and select the Dependency Agent ( Map feature) 
 
-
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon10.png)
+<br><br>
 
