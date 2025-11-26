@@ -17,6 +17,7 @@ Azure ARC is Azure's answer to enable customers to manage and deploy services in
 I will use Azure ARC to extend the reach of Azure into my own datacenter, allowing me to operate and deploy workloads that I'm familiar with in the Azure Cloud, onto my own hardware.
 And in this case, my own "datacenter" can be seen as an Edge site where local compute, storage and ingest can be offered as services against low latency, local performance.
 
+ream more on Azure Arc right here : https://learn.microsoft.com/en-us/azure/azure-arc/overview 
 
 ### Target design 
 
@@ -36,4 +37,6 @@ As a hypervisor I chose to run Proxmox VE, it is available for free and offers a
 I don't actually need most of these features for this deployment, buit it does serve other purposes next to this case. [Proxmox VE Website](https://www.proxmox.com/en/downloads)
 
 On top of proxmox, as virtual machines, i deployed 2 simple Windows server instances : `winserver01` & `winserver02` 
+
+
 
