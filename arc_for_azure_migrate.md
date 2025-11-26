@@ -75,7 +75,9 @@ Fill in the required fields: Resource group (same as before), a Region ( West Eu
 
 <br><br>
 
-Next, tagging is of use to display richer context of this deployment, as an example ass a `Datacenter` : `nameofDC` tage and a `City` and or `Country` as example. This will be applied to the ARC resources next. 
+Next, tagging is of use to display richer context of this deployment, as an example ass a `Datacenter` : `nameofDC` tag and a `City` and or `Country` as example. 
+This will be applied to the ARC resources next. 
+
 Next, click Download and Run script. The easiest way for me is to simply copy the script to my clipboard and execute the script in Powershell (ISE) on the target server(s) 
 
 After awhile, a popup or browser will launch, asking you to authenticate to your Azure subscription. Doing so enables the final registration of this resource into the Azure ARC enviromnent. If all went wll, the end result should look something like this:
