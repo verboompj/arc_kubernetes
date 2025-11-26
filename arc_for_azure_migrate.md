@@ -60,6 +60,7 @@ Azure ARC next: In the portal type ARC in the top field and click on Azure ARC:
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC.png)
 
+<br><br>
 We will create a onboarding script for the 2 OnPrem servers. 
 Click on Infrastructure, Machines in the left column and click the " `+ Onboard/Create` " to onboard new resources.
 Since we are only onboarding a few resources, a manual onboarding is OK for us. 
@@ -80,7 +81,7 @@ After awhile, a popup or browser will launch, asking you to authenticate to your
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_On3.png)
 
-
+<br><br>
 
 
 
