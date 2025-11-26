@@ -66,9 +66,12 @@ Since we are only onboarding a few resources, a manual onboarding is OK for us.
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_On.png)
 
-Fill in the required fields: Resource group (same as before), a Region ( West Europe for me), Operating System (in this case Winows), I left the SQL checkmark unchecked, a Public Endpoint for this Demo and finally the Authentication, here we select Manual as we are only onboarding 2 VM's.
+<br><br>
+
+Fill in the required fields: Resource group (same as before), a Region ( West Europe for me), Operating System (in this case Windows), I left the SQL checkmark unchecked, a Public Endpoint for this Demo and finally the Authentication, here we select Manual as we are only onboarding 2 VM's.
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_On2.png)
+<br><br>
 
 Next, tagging is of use to display richer context of this deployment, as an example ass a `Datacenter` : `nameofDC` tage and a `City` and or `Country` as example. This will be applied to the ARC resources next. 
 Next, click Download and Run script. The easiest way for me is to simply copy the script to my clipboard and execute the script in Powershell (ISE) on the target server(s) 
