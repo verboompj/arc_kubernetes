@@ -146,7 +146,7 @@ Ok back to our VM on the ARC blade - By now the AMA agent should be deployed. Le
 <br><br>
 
 
-#### WHat you should see in your LAW now 
+### What you should see in your LAW now 
 The default tables are these : 
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARCNEW.png)
