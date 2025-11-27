@@ -174,7 +174,7 @@ Click on Map at the top
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon11.png)
 <br><br>
 
-Immidiately a popup appears on the right side where we can deploy the Dependency Agent , however we need to enable a second DCR for it and cannot combine it with our first. 
+Immidiately a popup appears on the right side where we can deploy the Dependency Agent , however we need to enable a additional DCR for it and cannot combine it with our first. 
 For that click on Create New 
 
 <br><br>
