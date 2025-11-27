@@ -9,6 +9,8 @@ Azure ARC and (any) Kubernetes
 
 ## Topics 
 
+[ARC insights & prepare for Migrate](https://github.com/verboompj/arc_kubernetes/blob/main/arc_for_azure_migrate.md)
+
 [Arc Enabled (any) Kubernetes on the Edge - Intro](https://github.com/verboompj/arc_kubernetes/blob/main/arc_enabled_k3s.md)
 
 [Arc Data Controller & Data Services](https://github.com/verboompj/arc_kubernetes/blob/main/Azure_DC.md)
