@@ -100,7 +100,7 @@ Simply click Monitor Insights , configure your Log Analytics Workspace created e
 <br><br>
 
 Using this method , in the dialog click on `Customize Infrastructure Monitoring` , uncheck the preview and select our LAW we created before as target. Click Save and Enable. 
-If all went well, the AMA agent will be pushed to your ARC enabled VM through a newly created Data Collection Rule. Nice one ! 
+If all went well, the AMA agent will be pushed to your ARC enabled VM through a newly created Data Collection Rule (DCR). Nice one ! 
 
 Wile we wait for it to complete, lets see what we actually triggerd by this quick enablement --> A DCR.
 
