@@ -1,8 +1,9 @@
-# Intro ARC inventory as base for a Azure Migrate Businesscase & Assessment
+# Intro ARC inventory , Dependency Mapping amd create a export for an Azure Migrate Businesscase & Assessment
 
 In this write-up I will dive into setting up a Azure ARC Edge deployment. 
 
-Based on this deployment I will create a inventory file in CSV, based on the VM Insights and Connected Machine ARC extension.
+Based on this deployment I will create a inventory of all things OnPrem and a export in CSV, based on the VM Insights and Connected Machine ARC extension.
+The export I can use to create a businesscase in Azure Migrate.
 
 
 
