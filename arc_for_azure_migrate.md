@@ -29,6 +29,8 @@ I will deploy the "ARC agent" first, then, using a Data Collection Rule deploy t
 
 Fort this demo I will deploy a new Log Analytics workspace just for the 2 VM's and we will explore some tables and run som KQL queries to extract the data we need in order to create a Azure Migrate Assessment and Business Case.
 
+We will enable VM Insigts, a custom DCR, (optional) the Dependency AGent and run KQL queries.
+
 To keep it lean and mean, i will be using Public Endpoints for all Azure Services, and Europe as my service and data boundry. 
 
 ### Hardware Setup
@@ -122,17 +124,37 @@ Here you see our auto created rule. Click on it to explore it.
 The rule consists of "routing logic" in this case for Performance Counters to Log Analytics , see `View Data Sources` 
 The rule also triggers the deploymant of the AMA Agent for all selected Resources. Click `Resources` to find the server selected.
 
-Try not to modify this auto generated rule, again if you want to capture more info, create an additional DCR.
-
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon6.png)
 <br><br>
+
+Try not to modify this auto generated rule, again if you want to capture more info, create an additional DCR.
+For the sake of doing so, lets create a rule, give it a name, select your source systems and as target deifine Metrics and make sure you route them to your LAW
+
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR6.png), ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)
+<br><br>
+
+
 
 Ok back to our VM on the ARC blade - By now the AMA agent should be deployed. Lets check the Extensions on the right column: 
 
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon7.png)
 <br><br>
+
+
+#### WHat you should see in your LAW now 
+The default tables are these : 
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARCNEW.png)
+<br><br>
+
+If you only enabled VM Insights and the custom DCR, you should see these tables:
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARCNEW2.png)
+<br><br>
+
 
 
 #### Optional Dependency Agent
@@ -168,13 +190,4 @@ If you hop over to Monitor again, and browse the Data Collection Rules, you see 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon12.png)
 <br><br>
 
-#### WHat you should see in your LAW now 
-The default tables are these : 
-<br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARCNEW.png)
-<br><br>
-
-If you only enabled VM Insights, you should see these tables:
-
-If you also configured the dependency agent, you should see these tables: 
 
