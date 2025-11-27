@@ -164,8 +164,17 @@ Add a name and select the Dependency Agent ( Map feature)
 
 This may take some time and also some data has to flow in, so lets give it a some time. Time for a coffee. 
 If you hop over to Monitor again, and browse the Data Collection Rules, you see a second one appear:
-
+<br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon12.png)
+<br><br>
 
+#### WHat you should see in your LAW now 
+The default tables are these : 
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARCNEW.png)
+<br><br>
 
+If you only enabled VM Insights, you should see these tables:
+
+If you also configured the dependency agent, you should see these tables: 
 
