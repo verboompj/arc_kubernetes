@@ -90,17 +90,19 @@ After awhile, a popup or browser will launch, asking you to authenticate to your
 
 Allright, lets get some Monitoring Logs and Metrics in for our 2 servers. By default, ARC enables many services for free. The VM Insights we are after are metered services, billed by the amount of logs ingested. It won't be much for a demo environment , so lets go ahead to set it up.
 
-There are 2 ways of doing this - the neat way and the quick and dirty way. 
-Quick and dirty: Simply click Monitor Insights , configure your Log Analytics Workspace created earlier and done. 
+VM Insights are different from VM Performance Logs through a custom DCR. Be ware that VMInsights enabled the VM Insights data based on a predefined set of Metrics. 
+Adding more Metrics is possible, using a second DCR for capturing those specific ones. I will explain DCR's in a minute. 
+
+Simply click Monitor Insights , configure your Log Analytics Workspace created earlier and done. 
 
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Res.png)
 <br><br>
 
-Lets try this method first, in the dialog click on `Customize Infrastructure Monitoring` , uncheck the preview and select our LAW we created before as target. Click Save and Enable. 
+Using this method , in the dialog click on `Customize Infrastructure Monitoring` , uncheck the preview and select our LAW we created before as target. Click Save and Enable. 
 If all went well, the AMA agent will be pushed to your ARC enabled VM through a newly created Data Collection Rule. Nice one ! 
 
-Wile we wait for it to complete, lets see what we actually triggerd by this quick enablement. 
+Wile we wait for it to complete, lets see what we actually triggerd by this quick enablement --> A DCR.
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon4.png)
 
@@ -120,6 +122,8 @@ Here you see our auto created rule. Click on it to explore it.
 The rule consists of "routing logic" in this case for Performance Counters to Log Analytics , see `View Data Sources` 
 The rule also triggers the deploymant of the AMA Agent for all selected Resources. Click `Resources` to find the server selected.
 
+Try not to modify this auto generated rule, again if you want to capture more info, create an additional DCR.
+
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon6.png)
 <br><br>
@@ -130,7 +134,10 @@ Ok back to our VM on the ARC blade - By now the AMA agent should be deployed. Le
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon7.png)
 <br><br>
 
-Cool, we're almost there, we also want the Dependency Agent deployed. It is a extension of the AMA agent and enables deeper insights and dependencies through MAP or KQL visualizations.
+
+#### Optional Dependency Agent
+
+We may want to have the Dependency Agent deployed. It is a extension of the AMA agent and enables deeper insights on connections and dependencies through MAP or KQL visualizations.
 It is set for retirement in June of 2028 - thats OK for now. See : https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-dependency-agent#manually-install-or-upgrade-dependency-agent-on-windows 
 
 There are many ways to deploy this agent, in this demo we deploy it just as we did the AMA agent itself, through a DCR ( the rule ;-) ) 
