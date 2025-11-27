@@ -112,6 +112,7 @@ If all went well, the AMA agent will be pushed to your ARC enabled VM through a 
 Wile we wait for it to complete, lets see what we actually triggerd by this quick enablement --> A DCR.
 
 Lets see that new Data Collection Rule.
+
 For that we go to Azure Monitor in the Azure Portal. Use search bar at the top again and search for Monitor.
 When in Monitor, scroll down in the left column to Settings and click on Data Collection Rules.
 
@@ -129,10 +130,11 @@ The rule also triggers the deploymant of the AMA Agent for all selected Resource
 <br><br>
 
 Try not to modify this auto generated rule, again if you want to capture more metrics or custom fields, simply create an additional DCR.
+
 For the sake of doing so, lets create such rule, give it a name, select your source systems and as target deifine Metrics and make sure you route them to your LAW
 
 <br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR6.png), ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR6.png) ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)
 <br><br>
 
 
