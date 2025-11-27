@@ -180,16 +180,10 @@ For that click on Create New
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon9.png)
 <br><br>
 
-Add a name and select the Dependency Agent ( Map feature) 
+Add a name and select the Dependency Agent ( Map feature) This will trigger the deployment of the agenton top of the AMA Extension using a new DCR.
+
 
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon10.png)
 <br><br>
-
-This may take some time and also some data has to flow in, so lets give it a some time. Time for a coffee. 
-If you hop over to Monitor again, and browse the Data Collection Rules, you see a nwe one appear, MAP in my case (name of DCR):
-<br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon12.png)
-<br><br>
-
 
