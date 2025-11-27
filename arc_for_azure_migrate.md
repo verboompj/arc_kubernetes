@@ -187,3 +187,4 @@ Add a name and select the Dependency Agent ( Map feature) This will trigger the 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/ARC_Mon10.png)
 <br><br>
 
+After completing we should get some additional tables in the Log Analytics Workspace we can query in KQL in our next adventure
