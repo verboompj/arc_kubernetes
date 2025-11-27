@@ -207,3 +207,9 @@ After completing we should get some additional tables in the Log Analytics Works
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/LAW3.png)
 <br><br>
 
+## Reviewing our Map and Metrics
+
+In the next chapter we will use KQL to query the data. Visualizing is also possible, some examples: 
+
+From the VM Insights, Map, select the Workbooks on the far left side: 
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/insights.png)
