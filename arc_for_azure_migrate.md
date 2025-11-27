@@ -134,7 +134,9 @@ Try not to modify this auto generated rule, again if you want to capture more me
 For the sake of doing so, lets create such rule, give it a name, select your source systems and as target deifine Metrics and make sure you route them to your LAW
 
 <br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR6.png) ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR6.png) 
+<br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)
 <br><br>
 
 
