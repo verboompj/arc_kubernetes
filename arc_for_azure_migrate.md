@@ -145,8 +145,11 @@ For the sake of doing so, lets create such rule, give it a name, select your sou
 
 <br><br>
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR6.png) 
+
 <br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)
+
+<img>](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)</img>
+
 <br><br>
 
 
