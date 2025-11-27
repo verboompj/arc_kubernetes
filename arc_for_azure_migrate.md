@@ -6,6 +6,10 @@ Based on this deployment I will create a inventory of all things OnPrem and a ex
 The export I can use to create a businesscase in Azure Migrate.
 
 
+#### !!Important!! 
+
+Azure ARC now supportd a direct integration with Azure Migrate through a preview feature, check it out here: https://learn.microsoft.com/en-us/azure/migrate/concepts-arc-resource-discovery?view=migrate 
+
 
 
 
