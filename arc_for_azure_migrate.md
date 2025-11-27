@@ -159,7 +159,7 @@ If you only enabled VM Insights and the custom DCR, you should see these tables:
 
 
 
-### Optional Dependency Agent
+## Optional Dependency Agent
 
 We may want to have the Dependency Agent deployed. It is a extension of the AMA agent and enables deeper insights on connections and dependencies through MAP or KQL visualizations.
 It is set for retirement in June of 2028 - thats OK for now. See : https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-dependency-agent#manually-install-or-upgrade-dependency-agent-on-windows 
