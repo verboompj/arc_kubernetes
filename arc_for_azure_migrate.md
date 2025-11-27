@@ -1,4 +1,4 @@
-# Intro ARC inventory , Dependency Mapping amd create a export for an Azure Migrate Businesscase & Assessment
+# Intro ARC inventory , Dependency Mapping & create a export for an Azure Migrate Businesscase & Assessment
 
 In this write-up I will dive into setting up a Azure ARC Edge deployment. 
 
