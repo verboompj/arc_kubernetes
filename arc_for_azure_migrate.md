@@ -45,11 +45,6 @@ I don't actually need most of these features for this deployment, buit it does s
 
 On top of proxmox, as virtual machines, i deployed 2 simple Windows server instances : `winserver01` & `winserver02` 
 
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/pve.png)
-
-
-<br><br><br>
-
 ## Log Analytics Workspace
 
 A fresh LAW (Log  Analytics Workspace) is usefull if you really want to track all updates the AMA agent and Dependency Agent create as Tables in your workspace, so lets deploy one:
