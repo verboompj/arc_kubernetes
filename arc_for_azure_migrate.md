@@ -23,6 +23,7 @@ Azure ARC now supportd a direct integration with Azure Migrate through a preview
 
 [Depndency Agent](https://github.com/verboompj/arc_kubernetes/blob/main/arc_for_azure_migrate.md#optional-dependency-agent)
 
+<br><br>
 
 ## Intro into ARC
 As a quick intro, what is Azure ARC ? 
