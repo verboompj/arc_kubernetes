@@ -148,7 +148,7 @@ For the sake of doing so, lets create such rule, give it a name, select your sou
 
 <br>
 
-<img>(https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png)</img>
+<img>https://github.com/verboompj/arc_kubernetes/blob/main/pictures/DCR7.png</img>
 
 <br><br>
 
