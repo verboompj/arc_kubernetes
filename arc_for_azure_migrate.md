@@ -211,7 +211,7 @@ From the VM Insights select the Map feature. If no data is showing, give it some
 
 The Workbooks are very usefull as well, for example the Conections Overview and Port Activity 
 <br><br>
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/Insights1.png)
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/insights1.png)
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/MAP4.png)
 
