@@ -11,7 +11,7 @@ The export I can use to create a businesscase in Azure Migrate.
 Azure ARC now supportd a direct integration with Azure Migrate through a preview feature, check it out here: https://learn.microsoft.com/en-us/azure/migrate/concepts-arc-resource-discovery?view=migrate 
 
 <br><br>
-
+#### / !!Important!! 
 
 [Intro ino ARC](https://github.com/verboompj/arc_kubernetes/blob/main/arc_for_azure_migrate.md#intro-into-arc)
 
