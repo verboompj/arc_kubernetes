@@ -7,7 +7,6 @@ The goal is to monitor and understand the onprem infrastructure, the connections
 
 
 
-<br><br>
 [Intro ino ARC](https://github.com/verboompj/arc_kubernetes/blob/main/arc_for_azure_migrate.md#intro-into-arc)
 
 [Log Analytics Workspace](https://github.com/verboompj/arc_kubernetes/blob/main/arc_for_azure_migrate.md#log-analytics-workspace)
@@ -216,5 +215,13 @@ The Workbooks are very usefull as well, for example the Conections Overview and 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/MAP4.png)
 
 <br><br>
+
+
+## KQL queries
+
+For a base inventory of VM, OS, Disk, CPU and Memory we can use 3 tables oit of our Log Analytics Workspace : `VMComputer` , `InsightsMetrics` and `Perf` 
+When exploring these tables, the easiest way to show what they contain is to run a query with just the name of the Table: 
+
+
 
 
