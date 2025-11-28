@@ -1,17 +1,10 @@
 # Intro into Hybrid ARC Moniotoring & Inventory , including Dependency Mapping 
 
-In this write-up I will dive into setting up a Azure ARC Edge deployment. 
-
-Based on this deployment I will create a inventory of all things OnPrem and a export in CSV, based on the VM Insights and Connected Machine ARC extension.
-The export I can use to create a businesscase in Azure Migrate.
+In this write-up I will dive into setting up a Azure ARC Edge deployment and enrolling it into Azure Monitor. 
+The goal is to monitor and understand the onprem infrastructure, the connections and dependencies. 
 
 
-#### !!Important!! 
 
-Azure ARC now supportd a direct integration with Azure Migrate through a preview feature, check it out here: https://learn.microsoft.com/en-us/azure/migrate/concepts-arc-resource-discovery?view=migrate 
-
-
-#### !!Important!! 
 
 
 <br><br>
@@ -213,5 +206,18 @@ After completing we should get some additional tables in the Log Analytics Works
 
 In the next chapter we will use KQL to query the data. Visualizing is also possible, some examples: 
 
-From the VM Insights, Map, select the Workbooks on the far left side: 
-![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/insights1.png)
+From the VM Insights select the Map feature. If no data is showing, give it some time, this may take upto 30 minutes to collect enough data.
+
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/MAP1.png)
+<br><br>
+
+The Workbooks are very usefull as well, for example the Conections Overview and Port Activity 
+<br><br>
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/Insights1.png)
+
+![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/MAP4.png)
+
+<br><br>
+
+
