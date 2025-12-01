@@ -223,9 +223,6 @@ For a base inventory of VM, OS, Disk, CPU and Memory we can use 3 tables oit of 
 When exploring these tables, the easiest way to show what they contain is to run a query with just the name of the Table.
 
 Combining, your imagination is the limit. Example query: 
-`
-
-
 
 
 let startTime = ago(1d);
@@ -341,7 +338,6 @@ Perf
            ["Disk 1 read ops (operations per second)"], ["Disk 1 write ops (operations per second)"]
 
 
-` 
 
 
 
