@@ -1,0 +1,119 @@
+
+
+
+
+
+let startTime = ago(1d);
+let endTime = now();
+
+
+
+Heartbeat
+    | where TimeGenerated between (startTime .. endTime)
+    | where OSType == "Windows"   // <-- restrict to Windows servers
+    | project ServerName = Computer, OSName, OSMajorVersion, OSMinorVersion 
+| join kind=leftouter (
+VMComputer
+| where TimeGenerated between (startTime .. endTime)
+| project Computer,
+          ["IP addresses"] = tostring(Ipv4Addresses[0]), 
+          Cores = Cpus,
+          MemoryMB = round(PhysicalMemoryMB / 1.024, 0),
+          Hypervisor = VirtualMachineType
+) on $left.ServerName == $right.Computer
+| join kind=leftouter (
+Perf
+    | where ObjectName in ("LogicalDisk", "Physical Disk")
+    | summarize 
+        DiskCount = dcount(InstanceName),
+        StorageUsedGB = round(sumif(CounterValue, CounterName == "Free Megabytes") / 1024000, 0),
+        DiskReadOpsPerSec = round(avgif(CounterValue, CounterName in ("Disk Reads/sec","Reads/sec")), 0),
+        DiskWriteOpsPerSec = round(avgif(CounterValue, CounterName in ("Disk Writes/sec","Writes/sec")), 0),
+        DiskReadThroughputMBps = round(avgif(CounterValue, CounterName in ("Disk Read Bytes/sec","Read Bytes/sec")) / 1024 / 1024, 2),
+        DiskWriteThroughputMBps = round(avgif(CounterValue, CounterName in ("Disk Write Bytes/sec","Write Bytes/sec")) / 1024 / 1024, 2)
+      by Computer
+) on $left.ServerName == $right.Computer
+| join kind=leftouter (
+    Perf
+    | where ObjectName == "Network Interface"
+    | summarize NetworkAdapterCount = dcount(InstanceName) by Computer
+) on $left.ServerName == $right.Computer
+| join kind=leftouter (
+    Perf
+    | where TimeGenerated between (startTime .. endTime)
+    | where (ObjectName == "Processor Information" and CounterName == "% Processor Time")
+    | summarize CPUUtilizationPct = round(avg(CounterValue), 0) by Computer
+) on $left.ServerName == $right.Computer
+| join kind=leftouter (
+    Perf
+    | where TimeGenerated between (startTime .. endTime)
+    | where ObjectName == "Memory"
+    | where CounterName in ("% Committed Bytes In Use","Used Memory %")
+    | summarize AvgMem = avg(CounterValue), MaxMem = max(CounterValue) by Computer, CounterName
+    | extend MemoryUtilizationPct = case(
+        CounterName == "% Committed Bytes In Use", toint(round(AvgMem,0)),
+        CounterName == "Used Memory %", toint(round(AvgMem,0)),
+        0
+      ),
+      PeakMemoryUtilizationPct = case(
+        CounterName == "% Committed Bytes In Use", toint(round(MaxMem,0)),
+        CounterName == "Used Memory %", toint(round(MaxMem,0)),
+        0
+      )
+    | summarize 
+        MemoryUtilizationPct = max(MemoryUtilizationPct),
+        PeakMemoryUtilizationPct = max(PeakMemoryUtilizationPct)
+      by Computer
+) on $left.ServerName == $right.Computer
+| join kind=leftouter (
+    Perf
+    | where ObjectName == "Network Interface"
+    | summarize 
+        NetworkInThroughput = round(avgif(CounterValue, CounterName in ("Bytes Received/sec","Bytes In/sec")) / 1024 / 1024, 2),
+        NetworkOutThroughput = round(avgif(CounterValue, CounterName in ("Bytes Sent/sec","Bytes Out/sec")) / 1024 / 1024, 2)
+      by Computer
+) on $left.ServerName == $right.Computer
+| extend StorageInUseGB = StorageUsedGB,
+         ["Memory (In MB)"] = MemoryMB,
+         Disk1SizeGB = StorageUsedGB,
+         Disk1ReadThroughputMBps = DiskReadThroughputMBps,
+         Disk1WriteThroughputMBps = DiskWriteThroughputMBps,
+         Disk1ReadOpsPerSec = DiskReadOpsPerSec,
+         Cores = Cores,
+         Disk1WriteOpsPerSec = DiskWriteOpsPerSec,
+         NetworkInThroughput = NetworkInThroughput,
+         NetworkOutThroughput = NetworkOutThroughput,
+         BootType = "",
+         OSVersion = strcat(OSMajorVersion, ".", OSMinorVersion),
+         OSArchitecture = "",
+         ServerType = ""
+| project ["Server name"] = ServerName,
+          ["IP addresses"],
+          Cores,
+          ["Memory (In MB)"],
+          ["OS name"] = OSName,
+          ["OS version"] = OSVersion,
+          ["OS architecture"] = OSArchitecture,
+          ["Server type"] = ServerType,
+          ["Hypervisor"] = Hypervisor,
+          ["CPU utilization percentage"] = CPUUtilizationPct,
+          ["Memory utilization percentage"] = MemoryUtilizationPct,
+          ["Peak memory utilization percentage"] = PeakMemoryUtilizationPct,
+          ["Network adapters"] = NetworkAdapterCount,
+          ["Network In throughput"] = NetworkInThroughput,
+          ["Network Out throughput"] = NetworkOutThroughput,
+          ["Boot type"] = BootType,
+          ["Number of disks"] = DiskCount,
+          ["Storage in use (In GB)"] = StorageInUseGB,
+          ["Disk 1 size (In GB)"] = Disk1SizeGB,
+          ["Disk 1 read throughput (MB per second)"] = Disk1ReadThroughputMBps,
+          ["Disk 1 write throughput (MB per second)"] = Disk1WriteThroughputMBps,
+          ["Disk 1 read ops (operations per second)"] = Disk1ReadOpsPerSec,
+          ["Disk 1 write ops (operations per second)"] = Disk1WriteOpsPerSec
+| distinct ["Server name"], ["IP addresses"], Cores, ["Memory (In MB)"], ["OS name"], ["OS version"], ["OS architecture"], ["Server type"], ["Hypervisor"],
+           ["CPU utilization percentage"], ["Memory utilization percentage"], ["Network adapters"], ["Network In throughput"], ["Network Out throughput"], ["Boot type"],
+           ["Number of disks"], ["Storage in use (In GB)"], ["Disk 1 size (In GB)"], ["Disk 1 read throughput (MB per second)"], ["Disk 1 write throughput (MB per second)"],
+           ["Disk 1 read ops (operations per second)"], ["Disk 1 write ops (operations per second)"]
+
+
+
