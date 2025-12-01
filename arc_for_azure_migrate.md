@@ -229,4 +229,4 @@ this prduces:
 
 ![](https://github.com/verboompj/arc_kubernetes/blob/main/pictures/KQL3.png)
 
-As a fun fact, one can export the results of this query, in CSV (include all columns),  to produce a CSV file that can be imported into a Azure Migrate project as a static input. Based on this input a Assessment and Business case can be created. 
+As a fun fact, one can export the results of this query, in CSV (include all columns),  to produce a CSV file that can be imported into a Azure Migrate project as a static input. Based on this input a Assessment and Business case can be created.  However, there are more efficient ways of doing this, for instance using the Arc based Discovery : https://learn.microsoft.com/en-us/azure/migrate/quickstart-evaluate-readiness-savings-for-arc-resources?view=migrate 
